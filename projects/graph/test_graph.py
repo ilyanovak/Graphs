@@ -14,7 +14,7 @@ class Test(unittest.TestCase):
         self.graph.add_vertex(5)
         self.graph.add_vertex(6)
         self.graph.add_vertex(7)
-        
+
         self.graph.add_edge(5, 3)
         self.graph.add_edge(6, 3)
         self.graph.add_edge(7, 1)
@@ -31,7 +31,7 @@ class Test(unittest.TestCase):
           1: {2},
           2: {3, 4},
           3: {5},
-          4: {6, 7}, 
+          4: {6, 7},
           5: {3},
           6: {3},
           7: {1, 6}
@@ -97,7 +97,7 @@ class Test(unittest.TestCase):
 
         sys.stdout = stdout_  # Restore stdout
 
-    def test_bfs(self):
+    # def test_bfs(self):
         bfs = [1, 2, 4, 6]
         self.assertListEqual(self.graph.bfs(1, 6), bfs)
 
@@ -106,7 +106,8 @@ class Test(unittest.TestCase):
             [1, 2, 4, 6],
             [1, 2, 4, 7, 6]
         ]
-        self.assertIn(self.graph.dfs(1,6), dfs)
+        self.assertIn(self.graph.dfs(1, 6), dfs)
+
 
     def test_dfs_recursive(self):
         dfs = [
